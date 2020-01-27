@@ -5,7 +5,7 @@ resource "datadog_monitor" "not_responding" {
   type    = "service check"
 
   query = <<EOQ
-    "zookeeper.ruok"${module.filter-tags.service_check}.by("instance").last(6).count_by_status()
+    "zookeeper.ruok"${module.filter-tags.service_check}.by("server").last(6).count_by_status()
 EOQ
 
   thresholds = {
@@ -24,7 +24,7 @@ EOQ
   renotify_interval   = 0
 
   tags = concat(["env:${var.environment}", "type:database", "provider:solr", "resource:solr", "team:claranet",
-    "created-by:terraform"], var.zookeeper_not_responding_extra_tags)
+  "created-by:terraform"], var.zookeeper_not_responding_extra_tags)
 
   lifecycle {
     ignore_changes = [silenced]
@@ -47,7 +47,7 @@ EOQ
     critical = var.zookeeper_latency_threshold_critical
   }
 
-  notify_no_data      = var.zookeeper_latency_notify_no_data
+  notify_no_data      = false
   evaluation_delay    = var.evaluation_delay
   new_host_delay      = var.new_host_delay
   notify_audit        = var.zookeeper_latency_notify_audit
@@ -57,7 +57,7 @@ EOQ
   require_full_window = true
 
   tags = concat(["env:${var.environment}", "type:database", "provider:zookeeper", "resource:zookeeper", "team:claranet",
-    "created-by:terraform"], var.zookeeper_latency_availability_extra_tags)
+  "created-by:terraform"], var.zookeeper_latency_availability_extra_tags)
 
   lifecycle {
     ignore_changes = [silenced]

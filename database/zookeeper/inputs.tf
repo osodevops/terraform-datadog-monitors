@@ -151,12 +151,6 @@ variable "zookeeper_latency_availability_extra_tags" {
   default     = []
 }
 
-variable "zookeeper_latency_notify_no_data" {
-  description = "Flag to enable no data alerting on latency monitor"
-  type        = bool
-  default     = false
-}
-
 variable "zookeeper_latency_notify_audit" {
   description = "Enable or not notify audit on Zookeeper latency monitor"
   type        = bool

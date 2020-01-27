@@ -41,7 +41,6 @@ Creates DataDog monitors with the following checks:
 | zookeeper\_latency\_availability\_extra\_tags | Extra tags for zookeeper read latency monitor | `list(string)` | `[]` | no |
 | zookeeper\_latency\_enabled | Flag to enable Zookeeper read latency monitor | `string` | `"true"` | no |
 | zookeeper\_latency\_notify\_audit | Enable or not notify audit on Zookeeper latency monitor | `bool` | `false` | no |
-| zookeeper\_latency\_notify\_no\_data | Flag to enable no data alerting on latency monitor | `bool` | `false` | no |
 | zookeeper\_latency\_status\_message | Custom message for Zookeeper read latency monitor | `string` | `""` | no |
 | zookeeper\_latency\_threshold\_critical | Maximum critical acceptable ms of zookeeper latency monitor | `number` | `300000` | no |
 | zookeeper\_latency\_threshold\_warning | Maximum warning acceptable ms of zookeeper latency monitor | `number` | `250000` | no |
