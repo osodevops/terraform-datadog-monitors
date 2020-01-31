@@ -5,7 +5,7 @@ resource "datadog_monitor" "not_responding" {
   type    = "service check"
 
   query = <<EOQ
-    "zookeeper.ruok"${module.filter-tags.service_check}.by("server").last(6).count_by_status()
+    "zookeeper.ruok"${module.filter-tags.service_check}.by("server","host").last(6).count_by_status()
 EOQ
 
   thresholds = {
