@@ -23,7 +23,7 @@ EOQ
   require_full_window = true
   renotify_interval   = 0
 
-  tags = concat(["env:${var.environment}", "type:database", "provider:solr", "resource:solr", "team:claranet",
+  tags = concat(["env:${var.environment}", "type:database", "provider:zookeeper", "resource:zookeeper", "team:claranet",
   "created-by:terraform"], var.zookeeper_not_responding_extra_tags)
 
   lifecycle {
